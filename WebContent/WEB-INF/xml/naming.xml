@@ -84,6 +84,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	<Naming key="jp.mosp.platform.system.vo.SectionMasterVo">
 		所属マスタ
 	</Naming>
+	<Naming key="jp.mosp.platform.system.vo.ManHourMasterVo">
+		工数マスタ
+	</Naming>
 	<Naming key="jp.mosp.platform.system.vo.PositionMasterVo">
 		職位マスタ
 	</Naming>
@@ -839,7 +842,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	</Naming>
 	<Naming key="RetirementReasonDetail">
 		理由詳細
-	</Naming> 
+	</Naming>
 	<Naming key="Relevance">
 		関連
 	</Naming>

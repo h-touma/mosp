@@ -53,6 +53,8 @@ import = "jp.mosp.platform.workflow.vo.RouteCardVo"
 import = "jp.mosp.platform.workflow.action.RouteCardAction"
 import = "jp.mosp.platform.workflow.vo.RouteApplicationCardVo"
 import = "jp.mosp.platform.workflow.action.RouteApplicationCardAction"
+import = "jp.mosp.platform.system.vo.ManHourMasterVo"
+import = "jp.mosp.platform.system.action.ManHourMasterAction"
 %><%
 // MosP処理情報及びVOを取得
 MospParams params = (MospParams)request.getAttribute(MospConst.ATT_MOSP_PARAMS);
@@ -140,7 +142,13 @@ if (vo instanceof EmploymentMasterVo) {
 	addModeCommand = RouteApplicationCardAction.CMD_ADD_MODE;
 	editModeCommand = RouteApplicationCardAction.CMD_SELECT_SHOW;
 	keyCode = ((RouteApplicationCardVo)vo).getTxtApplicationCode();
-} 
+}else if (vo instanceof ManHourMasterVo) {
+	// 工数マスタ
+	insertModeCommand = ManHourMasterAction.CMD_INSERT_MODE;
+	addModeCommand = ManHourMasterAction.CMD_ADD_MODE;
+	editModeCommand = ManHourMasterAction.CMD_EDIT_MODE;
+	keyCode = ((ManHourMasterVo)vo).getTxtEditManHourCode();
+}
 
 //モード毎に設定
 if (vo.getModeCardEdit().equals(PlatformConst.MODE_CARD_EDIT_INSERT)) {

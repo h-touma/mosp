@@ -130,7 +130,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<ActionClass>jp.mosp.platform.human.action.HumanBinaryOutputFileAction</ActionClass>
 		<NeedProcSeq>unnecessary</NeedProcSeq>
 	</Controller>
-	
+
 	<Controller key="PF210*">
 		<ActionClass>jp.mosp.platform.system.action.EmploymentMasterAction</ActionClass>
 	</Controller>
@@ -170,7 +170,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	<Controller key="PF263*">
 		<ActionClass>jp.mosp.platform.system.action.NamingMasterAction</ActionClass>
 	</Controller>
-	
+	<Controller key="PF270*">
+		<ActionClass>jp.mosp.platform.system.action.ManHourMasterAction</ActionClass>
+	</Controller>
+	<Controller key="PF271*">
+		<ActionClass>jp.mosp.platform.system.action.ManHourMasterAction</ActionClass>
+	</Controller>
 	<Controller key="PF311*">
 		<ActionClass>jp.mosp.platform.workflow.action.UnitListAction</ActionClass>
 	</Controller>

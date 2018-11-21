@@ -97,6 +97,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<Menu key="AccountMaster">
 			<Index>250</Index>
 		</Menu>
+		<Menu key="ManHourMaster">
+			<Index>270</Index>
+		</Menu>
 		<Menu key="UnitList">
 			<Index>310</Index>
 		</Menu>
@@ -158,6 +161,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		</Menu>
 		<Menu key="AccountMaster">
 			<Index>250</Index>
+		</Menu>
+		<Menu key="ManHourMaster">
+			<Index>270</Index>
 		</Menu>
 		<Menu key="UnitList">
 			<Index>310</Index>
@@ -223,6 +229,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		</Menu>
 		<Menu key="AccountMaster">
 			<Index>250</Index>
+		</Menu>
+		<Menu key="ManHourMaster">
+			<Index>270</Index>
 		</Menu>
 		<Menu key="UnitList">
 			<Index>310</Index>

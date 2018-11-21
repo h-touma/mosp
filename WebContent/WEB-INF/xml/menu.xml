@@ -63,6 +63,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<Command>PF2500</Command>
 			<VoClass>jp.mosp.platform.system.vo.WorkPlaceMasterVo</VoClass>
 		</Menu>
+		<Menu key="ManHourMaster">
+			<Command>PF2700</Command>
+			<VoClass>jp.mosp.platform.system.vo.ManHourMasterVo</VoClass>
+		</Menu>
 	</MainMenu>
 	<MainMenu key="menuWorkflowManage">
 		<Menu key="UnitList">
