@@ -114,7 +114,7 @@ if (params.getApplicationPropertyBool("PositionLevelAvailable")) {
 				<input type="text" class="Code10TextBox" id="txtSearchPositionCode" name="txtSearchPositionCode" value="<%= HtmlUtility.escapeHTML(vo.getTxtSearchPositionCode()) %>" />
 			</td>
 			<td class="TitleTd"><span><label for="txtSearchPositiontName"><%= params.getName("Position","Name") %></label></span></td>
-			<td class="InputTd"">
+			<td class="InputTd">
 				<input type="text" class="Name15-30TextBox" id="txtSearchPositiontName" name="txtSearchPositionName" value="<%= HtmlUtility.escapeHTML(vo.getTxtSearchPositionName()) %>" />
 			</td>
 		</tr>

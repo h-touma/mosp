@@ -867,4 +867,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	<Naming key="IfForgotPassword">
 		パスワードを忘れた場合
 	</Naming>
+	<Naming key="ProjectName">
+		プロジェクト名
+	</Naming>
+	<Naming key="ProjectNumber">
+		No #
+	</Naming>
 </MosP>

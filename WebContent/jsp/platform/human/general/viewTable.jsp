@@ -48,7 +48,7 @@ ViewConfigProperty viewConfig = params.getProperties().getViewConfigProperties()
 // 人事汎用表示テーブル設定取得
 ViewTableProperty viewTableProperty = viewConfig.getViewTable(viewTableKey);
 // 人事汎用項目リスト取得
-List<TableItemProperty> tableItemList = viewTableProperty.getTableItem(); 
+List<TableItemProperty> tableItemList = viewTableProperty.getTableItem();
 // 人事汎用表示テーブル形式取得
 String viewTableType = viewTableProperty.getType();
 // 人事汎用管理区分設定取得
@@ -63,7 +63,7 @@ if (pair == 0) {
 <%
 // 人事汎用表示テーブル形式確認(書類テーブルの場合)
 if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_CARD)) {
-%>	
+%>
 <table class="UnderTable" id="under<%=division %>Table">
 <%
 		// 人事汎用表示テーブル項目設定情報毎に処理
@@ -74,7 +74,7 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_CARD)) {
 		for(TableItemProperty tableItem : tableItemList){
 			// スタイル設定取得
 			int colspan = tableItem.getColspan();
-			int rowspan = tableItem.getRowspan();	
+			int rowspan = tableItem.getRowspan();
 			boolean isRequired = tableItem.isRequired();
 			// 人事汎用表示テーブル項目キー取得
 			String tableItemKey = tableItem.getKey();
@@ -94,9 +94,9 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_CARD)) {
 				}
 %>
 	<tr>
-<%				
+<%
 			}
-%>	
+%>
 		<td class="TitleTd" id="td<%=tableItemKey %>Title" <% if(rowspan !=0) { %> rowspan ="<%= rowspan %>" <% } %> ><%if(isRequired){%><span class="RequiredLabel">*&nbsp;</span><% }%><span><label for="<%= itemNameCsv %>"><%= params.getName(tableItemKey) %></label></span></td>
 		<td class="InputTd"  id="td<%=tableItemKey %>Body" colspan="<%= colspan %>"  <% if(rowspan !=0) { %> rowspan = "<%= rowspan %>" <% } %>>
 <%
@@ -106,7 +106,7 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_CARD)) {
 				params.addGeneralParam(PlatformHumanConst.PRM_HUMAN_ITEM_ITEM_KEY,itemKeys[i]);
 				params.addGeneralParam(PlatformHumanConst.PRM_HUMAN_ITEM_ITEM_NAME,itemNames[i]);
 %>
-			<jsp:include page="<%= PlatformHumanConst.PATH_HUMAN_ITEM_JSP %>" flush="false" /> 
+			<jsp:include page="<%= PlatformHumanConst.PATH_HUMAN_ITEM_JSP %>" flush="false" />
 <%
 			}
 			// 固定値設定
@@ -124,15 +124,15 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_CARD)) {
 			// 列結合設定がある場合
 			if(colspan > 1){
 				// 項目数 + (td + タイトルtd)/2-自分=項目数
-				itemCount += (colspan + 1)/2-1;	
+				itemCount += (colspan + 1)/2-1;
 			}
 			// 項目数が0ではなくかつ項目数と結合数を割った値が0でない場合
 			if (itemCount != 0 && itemCount % pair == 0) {
 				// 改行
 %>
 	</tr>
-<%			
-			}		
+<%
+			}
 		}
 		// 項目数と結合数を割った値が0ではない場合
 		if(itemCount % pair != 0){
@@ -154,9 +154,9 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_ARRAY)) {
 %>
 <table class="UnderTable" id="under<%=division %>Table">
 	<tr>
-		<td class="TitleTd" id="arrayButton"></td>	
+		<td class="TitleTd" id="arrayButton"></td>
 		<td class="TitleTd" id="arrayActivateDate">
-<% 
+<%
 	//日付名が設定されている場合
 	if(dateName.isEmpty() == false && dateName != null){
 %>
@@ -179,14 +179,14 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_ARRAY)) {
 		String tableItemKey = tableItem.getKey();
 		// 配列(String)を区切文字で区切った文字列取得
 		String itemKeyCsv = MospUtility.toSeparatedString(itemKeys,MospConst.APP_PROPERTY_SEPARATOR);
-%>	
+%>
 		<td class="TitleTd" id="td<%= tableItemKey %>Title"><label for="<%= itemKeyCsv %>"><%= params.getName(tableItemKey) %></label></td>
 <%
 	}
 %>
 	</tr>
 	<tr>
-<%		
+<%
 	// 行IDリストを取得
 	List<String> rowIdList = new ArrayList<String>(vo.getHumanArrayMap().get(division).keySet());
 	// 行IDリスト毎に処理
@@ -202,7 +202,7 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_ARRAY)) {
 		<td class="ListInputTd" id="tdAryActiveDate" >
 		<span><%= vo.getArrayItem(division,rowId,PlatformHumanConst.PRM_HUMAN_ARRAY_DATE) %></span>
 		</td>
-<% 		
+<%
 		//人事汎用項目毎に処理
 		for(TableItemProperty tableItem : tableItemList){
 			// MosP処理情報に行ID設定
@@ -219,7 +219,7 @@ if (viewTableType.equals(PlatformHumanConst.TYPE_VIEW_TABLE_ARRAY)) {
 			params.addGeneralParam(PlatformHumanConst.PRM_HUMAN_ITEM_ITEM_KEY,itemKeys[i]);
 			params.addGeneralParam(PlatformHumanConst.PRM_HUMAN_ITEM_ITEM_NAME,itemNames[i]);
 %>
-			<jsp:include page="<%= PlatformHumanConst.PATH_HUMAN_ITEM_JSP %>" flush="false" /> 
+			<jsp:include page="<%= PlatformHumanConst.PATH_HUMAN_ITEM_JSP %>" flush="false" />
 <%
 			}
 			// 固定値設定

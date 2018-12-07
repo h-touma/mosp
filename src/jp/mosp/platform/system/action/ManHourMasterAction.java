@@ -3,6 +3,7 @@ package jp.mosp.platform.system.action;
 import jp.mosp.framework.base.BaseVo;
 import jp.mosp.framework.base.MospException;
 import jp.mosp.platform.comparator.base.EmploymentContractCodeComparator;
+import jp.mosp.platform.constant.PlatformConst;
 import jp.mosp.platform.system.base.PlatformSystemAction;
 import jp.mosp.platform.system.vo.ManHourMasterVo;
 
@@ -17,6 +18,8 @@ public class ManHourMasterAction extends PlatformSystemAction {
 	public static final String		CMD_INSERT_MODE		= "PF2711";
 	public static final String		CMD_EDIT_MODE		= "PF2712";
 	public static final String		CMD_ADD_MODE		= "PF2713";
+	public static final String		CMD_SET_ACTIVATION_DATE ="PF2714";
+
 
 	public ManHourMasterAction() {
 		super();
@@ -66,6 +69,9 @@ public class ManHourMasterAction extends PlatformSystemAction {
 			// 削除
 			prepareVo();
 //			delete();
+		} else if(mospParams.getCommand().equals(CMD_SET_ACTIVATION_DATE)) {
+			prepareVo(false,false);
+			setActivationDate();
 		}
 
 	}
@@ -94,6 +100,17 @@ public class ManHourMasterAction extends PlatformSystemAction {
 //		vo.setTxtEditPositionAbbr("");
 //		vo.setTxtEditPositionGrade("");
 //		vo.setTxtEditPositionLevel(DEFAULT_LEVEL);
+		vo.setModeActivateDate(PlatformConst.MODE_ACTIVATE_DATE_CHANGING);
+	}
+
+	protected void setActivationDate() throws MospException {
+		ManHourMasterVo vo = (ManHourMasterVo)mospParams.getVo();
+
+		if(vo.getModeActivateDate().equals(PlatformConst.MODE_ACTIVATE_DATE_CHANGING)) {
+			vo.setModeActivateDate(PlatformConst.MODE_ACTIVATE_DATE_FIXED);
+		} else {
+			vo.setModeActivateDate(PlatformConst.MODE_ACTIVATE_DATE_CHANGING);
+		}
 	}
 
 }
